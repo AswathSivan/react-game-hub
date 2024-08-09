@@ -8,11 +8,11 @@ function App() {
         base: `"nav main"`,
         lg: `"nav nav" "aside main"`
       }}>
-        <GridItem area="nav" bg="coral"><Navbar></Navbar></GridItem>
+        <GridItem area="nav"><Navbar></Navbar></GridItem>
         <Show above='lg'>
-          <GridItem area="aside" bg="blue">Aside</GridItem>
+          <GridItem area="aside">Aside</GridItem>
         </Show>
-        <GridItem area="main" bg="green">Main</GridItem>
+        <GridItem area="main">Main</GridItem>
       </Grid>
     </>
   )
