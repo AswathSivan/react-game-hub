@@ -1,37 +1,7 @@
-import { Grid, GridItem, Show } from '@chakra-ui/react'
-import Navbar from './components/Navbar'
-import GameGrid from './components/GameGrid'
-import GenreList from './components/GenreList'
-import { useState } from 'react'
-import { Genre } from './hooks/useGenre'
-import PlatformList from './components/PlatformList'
-import { Platform } from './hooks/useGames'
+import { Button } from "@chakra-ui/react"
 
-function App() {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null)
-  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null)
-  return (
-    <>
-      <Grid templateAreas={{
-        base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
-      }}
-        templateColumns={{
-          base: '1fr',
-          lg: '200px 1fr'
-        }}
-      >
-        <GridItem area="nav"><Navbar></Navbar></GridItem>
-        <Show above='lg'>
-          <GridItem area="aside" paddingX={5}><GenreList onSelectedGenre={(genre) => setSelectedGenre(genre)} selectedGenre={selectedGenre}></GenreList></GridItem>
-        </Show>
-        <GridItem area="main">
-          <PlatformList onSelectedPlatform={(platform) => setSelectedPlatform(platform)} selectedPlatform={selectedPlatform}></PlatformList>
-          <GameGrid selectedGenre={selectedGenre} selectedPlatform={selectedPlatform}></GameGrid>
-        </GridItem>
-      </Grid>
-    </>
-  )
+const App = () => {
+  return <Button colorScheme='blue'>Button</Button>
 }
 
 export default App
