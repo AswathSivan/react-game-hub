@@ -1,4 +1,5 @@
 const getCroppedImageUrl = (url: string) => {
+  if (!url) return "";
   const target = "media/";
   const imgSize = "crop/600/400/";
   const index = url.indexOf(target) + target.length;
